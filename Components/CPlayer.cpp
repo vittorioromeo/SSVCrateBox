@@ -22,7 +22,7 @@ namespace cb
 	{
 		cPhysics.onDetection += [&](Entity& mEntity)
 		{
-			if(mEntity.getId() == "box") mEntity.destroy();
+			//if(mEntity.getId() == "box") mEntity.destroy();
 		};
 		cPhysics.onResolution += [&](Vector2i mMinIntersection)
 		{

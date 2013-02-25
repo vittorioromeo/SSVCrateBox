@@ -27,6 +27,8 @@ namespace cb
 			sses::Entity& createWall(sf::Vector2i mPosition);
 			sses::Entity& createBox(sf::Vector2i mPosition);
 			sses::Entity& createPlayer(sf::Vector2i mPosition);
+			sses::Entity& createLift(sf::Vector2i mPosition, sf::Vector2f mVelocity);
+			sses::Entity& createMetalBox(sf::Vector2i mPosition);
 	};
 }
 

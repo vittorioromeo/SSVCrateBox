@@ -2,8 +2,8 @@
 // License: Academic Free License ("AFL") v. 3.0
 // AFL License page: http://opensource.org/licenses/AFL-3.0
 
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef CB_UTILS_H
+#define CB_UTILS_H
 
 #include <SFML/Graphics.hpp>
 #include <SSVStart.h>
@@ -20,4 +20,4 @@ namespace cb
 	}
 }
 
-#endif // UTILS_H
+#endif // CB_UTILS_H

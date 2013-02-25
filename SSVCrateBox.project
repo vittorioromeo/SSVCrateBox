@@ -22,6 +22,8 @@
       <File Name="Components/CRender.cpp"/>
       <File Name="Components/CPlayer.h"/>
       <File Name="Components/CPlayer.cpp"/>
+      <File Name="Components/CLift.h"/>
+      <File Name="Components/CLift.cpp"/>
     </VirtualDirectory>
     <File Name="CBFactory.h"/>
     <File Name="CBFactory.cpp"/>

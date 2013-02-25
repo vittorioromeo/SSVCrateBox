@@ -20,17 +20,22 @@ namespace cb
 			CBGame& cbGame;
 			ssvsc::World& world;
 			ssvsc::Body& body;
+			bool noGravity{false};
+
+			sf::Vector2i lastResolution;
+			bool crushLeft{false}, crushRight{false}, crushTop{false}, crushBottom{false};
 
 		public:
 			ssvs::Delegate<void, sses::Entity&> onDetection;
 			ssvs::Delegate<void, sf::Vector2i> onResolution;
 
-			CPhysics(CBGame& mCBGame, ssvsc::World& mWorld, bool mIsStatic, sf::Vector2i mPosition, sf::Vector2i mSize);
+			CPhysics(CBGame& mCBGame, ssvsc::World& mWorld, bool mIsStatic, sf::Vector2i mPosition, sf::Vector2i mSize, bool mNoGravity = false);
 			~CPhysics();
 
 			void init() override;
 
 			ssvsc::Body& getBody();
+			bool isNoGravity();
 	};
 }
 

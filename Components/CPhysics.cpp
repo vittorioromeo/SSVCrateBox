@@ -14,8 +14,8 @@ using namespace cb::Utils;
 
 namespace cb
 {
-	CPhysics::CPhysics(CBGame& mCBGame, World& mWorld, bool mIsStatic, Vector2i mPosition, Vector2i mSize)
-		: Component("physics"), cbGame(mCBGame), world(mWorld), body(world.create(mPosition, mSize, mIsStatic))
+	CPhysics::CPhysics(CBGame& mCBGame, World& mWorld, bool mIsStatic, Vector2i mPosition, Vector2i mSize, bool mNoGravity)
+		: Component("physics"), cbGame(mCBGame), world(mWorld), body(world.create(mPosition, mSize, mIsStatic)), noGravity{mNoGravity}
 	{
 		body.onDetection += [&](DetectionInfo mDetectionInfo)
 		{
@@ -25,7 +25,27 @@ namespace cb
 		};
 		body.onResolution += [&](ResolutionInfo mResolutionInfo)
 		{
-			onResolution(mResolutionInfo.minIntersection);
+			onResolution(mResolutionInfo.resolution);
+
+			lastResolution = mResolutionInfo.resolution;
+			if(mResolutionInfo.resolution.x > 0) crushLeft = true;
+			else if(mResolutionInfo.resolution.x < 0) crushRight = true;
+			if(mResolutionInfo.resolution.y > 0) crushTop = true;
+			else if(mResolutionInfo.resolution.y < 0) crushBottom = true;
+		};
+		body.onPreUpdate += [&]
+		{
+			lastResolution = {0, 0};
+			crushLeft = crushRight = crushTop = crushBottom = false;
+		};
+		body.onPostUpdate += [&]
+		{
+			if(!contains(body.getGroups(), "crushable")) return;
+			
+			if(crushLeft && crushRight) body.setWidth(body.getWidth() - abs(lastResolution.x));
+			else if(crushTop && crushBottom) body.setHeight(body.getHeight() - abs(lastResolution.y));
+
+			if(body.getWidth() < 200 || body.getHeight() < 200) getEntity().destroy();
 		};
 	}
 	CPhysics::~CPhysics() { body.destroy(); }
@@ -33,5 +53,6 @@ namespace cb
 	void CPhysics::init() { body.setUserData(&getEntity()); }
 
 	Body& CPhysics::getBody() { return body; }
+	bool CPhysics::isNoGravity() { return noGravity; }
 }
 

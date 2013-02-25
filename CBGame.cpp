@@ -9,13 +9,14 @@
 
 using namespace ssvs;
 using namespace ssvsc;
+using namespace ssvsc::Utils;
 using namespace ssvs::Utils;
 using namespace sses;
 using namespace sf;
 
 namespace cb
 {
-	CBGame::CBGame(CBData& mData, ssvs::GameWindow& mGameWindow) : data(mData), world(World::create<Grid>(600, 600, 2500, 300)),
+	CBGame::CBGame(CBData& mData, ssvs::GameWindow& mGameWindow) : data(mData), world(createResolver<Retro>(), createSpatial<Grid>(600, 600, 2500, 300)),
 		factory{new CBFactory{*this, manager, world}}, gameWindow(mGameWindow)
 
 	{
@@ -69,12 +70,42 @@ namespace cb
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createBox(Vector2i(mousePosition.x, mousePosition.y));
 		}, InputCombo::ComboType::SINGLE);
+
+		gameState.addInput({k::Numpad3}, [&](float)
+		{
+			auto mousePosition = camera.getMousePosition() * 100.f;
+			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {0, -20});
+		}, InputCombo::ComboType::SINGLE);
+
+		gameState.addInput({k::Numpad4}, [&](float)
+		{
+			auto mousePosition = camera.getMousePosition() * 100.f;
+			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {0, 20});
+		}, InputCombo::ComboType::SINGLE);
+
+		gameState.addInput({k::Numpad5}, [&](float)
+		{
+			auto mousePosition = camera.getMousePosition() * 100.f;
+			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {-20, 0});
+		}, InputCombo::ComboType::SINGLE);
+
+		gameState.addInput({k::Numpad6}, [&](float)
+		{
+			auto mousePosition = camera.getMousePosition() * 100.f;
+			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {20, 0});
+		}, InputCombo::ComboType::SINGLE);
+
+		gameState.addInput({k::Numpad7}, [&](float)
+		{
+			auto mousePosition = camera.getMousePosition() * 100.f;
+			factory->createMetalBox(Vector2i(mousePosition.x, mousePosition.y));
+		}, InputCombo::ComboType::SINGLE);
 	}
 
 	void CBGame::initUpdate()
 	{
 		gameState.onUpdate += [&](float){ gameWindow.setTitle(toStr(gameWindow.getFPS())); };
-		gameState.onUpdate += [&](float){ for(auto cPhysics : manager.getComponents<CPhysics>("physics")) cPhysics->getBody().applyForce({0, 25}); };
+		gameState.onUpdate += [&](float){ for(auto cPhysics : manager.getComponents<CPhysics>("physics")) if(!cPhysics->isNoGravity()) cPhysics->getBody().applyForce({0, 25}); };
 		gameState.onUpdate += [&](float mFrameTime){ world.update(mFrameTime); };
 		gameState.onUpdate += [&](float mFrameTime){ manager.update(mFrameTime); };
 		gameState.onUpdate += [&](float mFrameTime){ timelineManager.update(mFrameTime); };

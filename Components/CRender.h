@@ -27,6 +27,7 @@ namespace cb
 			void update(float) override;
 			void draw() override;
 
+			void setRotation(float mDegrees);
 			void setFlippedX(bool mFlippedX);
 			void setFlippedY(bool mFlippedY);
 			bool isFlippedX() const;

@@ -29,6 +29,7 @@ namespace cb
 	}
 	void CRender::draw() { cbGame.render(sprite); }
 
+	void CRender::setRotation(float mDegrees)	{ sprite.setRotation(mDegrees); }
 	void CRender::setFlippedX(bool mFlippedX)	{ flippedX = mFlippedX; }
 	void CRender::setFlippedY(bool mFlippedY)	{ flippedY = mFlippedY; }
 	bool CRender::isFlippedX() const          	{ return flippedX; }

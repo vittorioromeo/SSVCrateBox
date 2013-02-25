@@ -19,7 +19,7 @@ namespace cb
 	{
 		private:
 			CBData& data;
-			ssvsc::World& world;
+			ssvsc::World world;
 			CBFactory* factory;
 			ssvs::GameState gameState;
 			ssvs::GameWindow& gameWindow;
