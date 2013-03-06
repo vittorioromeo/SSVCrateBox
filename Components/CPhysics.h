@@ -26,8 +26,8 @@ namespace cb
 			bool crushLeft{false}, crushRight{false}, crushTop{false}, crushBottom{false};
 
 		public:
-			ssvs::Delegate<void, sses::Entity&> onDetection;
-			ssvs::Delegate<void, sf::Vector2i> onResolution;
+			ssvs::Utils::Delegate<void, sses::Entity&> onDetection;
+			ssvs::Utils::Delegate<void, sf::Vector2i> onResolution;
 
 			CPhysics(CBGame& mCBGame, ssvsc::World& mWorld, bool mIsStatic, sf::Vector2i mPosition, sf::Vector2i mSize, bool mNoGravity = false);
 			~CPhysics();
