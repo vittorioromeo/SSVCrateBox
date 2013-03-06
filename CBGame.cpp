@@ -63,43 +63,43 @@ namespace cb
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createWall(Vector2i(mousePosition.x, mousePosition.y));
-		}, InputCombo::ComboType::SINGLE);
+		}, InputCombo::Types::SINGLE);
 
 		gameState.addInput({k::Numpad2}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createBox(Vector2i(mousePosition.x, mousePosition.y));
-		}, InputCombo::ComboType::SINGLE);
+		}, InputCombo::Types::SINGLE);
 
 		gameState.addInput({k::Numpad3}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {0, -20});
-		}, InputCombo::ComboType::SINGLE);
+		}, InputCombo::Types::SINGLE);
 
 		gameState.addInput({k::Numpad4}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {0, 20});
-		}, InputCombo::ComboType::SINGLE);
+		}, InputCombo::Types::SINGLE);
 
 		gameState.addInput({k::Numpad5}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {-20, 0});
-		}, InputCombo::ComboType::SINGLE);
+		}, InputCombo::Types::SINGLE);
 
 		gameState.addInput({k::Numpad6}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {20, 0});
-		}, InputCombo::ComboType::SINGLE);
+		}, InputCombo::Types::SINGLE);
 
 		gameState.addInput({k::Numpad7}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createMetalBox(Vector2i(mousePosition.x, mousePosition.y));
-		}, InputCombo::ComboType::SINGLE);
+		}, InputCombo::Types::SINGLE);
 	}
 
 	void CBGame::initUpdate()
