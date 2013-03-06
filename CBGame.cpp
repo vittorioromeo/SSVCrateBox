@@ -11,6 +11,7 @@ using namespace ssvs;
 using namespace ssvsc;
 using namespace ssvsc::Utils;
 using namespace ssvs::Utils;
+using namespace ssvs::Input;
 using namespace sses;
 using namespace sf;
 
@@ -43,63 +44,63 @@ namespace cb
 	{
 		using k = Keyboard::Key;
 
-		gameState.addInput({k::Escape}, [&](float){ gameWindow.stop(); });
+		gameState.addInput({{k::Escape}}, [&](float){ gameWindow.stop(); });
 
-		gameState.addInput({k::A}, 	[=](float mFrameTime){ camera.move(Vector2f{-10, 0} * mFrameTime); });
-		gameState.addInput({k::D}, 	[=](float mFrameTime){ camera.move(Vector2f{10, 0} * mFrameTime); });
-		gameState.addInput({k::W}, 	[=](float mFrameTime){ camera.move(Vector2f{0, -10} * mFrameTime); });
-		gameState.addInput({k::S}, 	[=](float mFrameTime){ camera.move(Vector2f{0, 10} * mFrameTime); });
-		gameState.addInput({k::Q}, 	[=](float mFrameTime){ camera.zoom(pow(1.1f, mFrameTime)); });
-		gameState.addInput({k::E}, 	[=](float mFrameTime){ camera.zoom(pow(0.9f, mFrameTime)); });
+		gameState.addInput({{k::A}}, 	[=](float mFrameTime){ camera.move(Vector2f{-10, 0} * mFrameTime); });
+		gameState.addInput({{k::D}}, 	[=](float mFrameTime){ camera.move(Vector2f{10, 0} * mFrameTime); });
+		gameState.addInput({{k::W}}, 	[=](float mFrameTime){ camera.move(Vector2f{0, -10} * mFrameTime); });
+		gameState.addInput({{k::S}}, 	[=](float mFrameTime){ camera.move(Vector2f{0, 10} * mFrameTime); });
+		gameState.addInput({{k::Q}}, 	[=](float mFrameTime){ camera.zoom(pow(1.1f, mFrameTime)); });
+		gameState.addInput({{k::E}}, 	[=](float mFrameTime){ camera.zoom(pow(0.9f, mFrameTime)); });
 
-		gameState.addInput({k::Left}, 	[&](float){ inputX = -1; });
-		gameState.addInput({k::Right}, 	[&](float){ inputX = 1; });
-		gameState.addInput({k::Up}, 	[&](float){ inputY = -1; });
-		gameState.addInput({k::Down}, 	[&](float){ inputY = 1; });
-		gameState.addInput({k::Z}, 		[&](float){ inputShoot = 1; });
-		gameState.addInput({k::X}, 		[&](float){ inputJump = 1; });
+		gameState.addInput({{k::Left}}, 	[&](float){ inputX = -1; });
+		gameState.addInput({{k::Right}}, 	[&](float){ inputX = 1; });
+		gameState.addInput({{k::Up}}, 		[&](float){ inputY = -1; });
+		gameState.addInput({{k::Down}}, 	[&](float){ inputY = 1; });
+		gameState.addInput({{k::Z}}, 		[&](float){ inputShoot = 1; });
+		gameState.addInput({{k::X}}, 		[&](float){ inputJump = 1; });
 
-		gameState.addInput({k::Numpad1}, [&](float)
+		gameState.addInput({{k::Numpad1}}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createWall(Vector2i(mousePosition.x, mousePosition.y));
-		}, InputCombo::Types::SINGLE);
+		}, Trigger::Types::SINGLE);
 
-		gameState.addInput({k::Numpad2}, [&](float)
+		gameState.addInput({{k::Numpad2}}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createBox(Vector2i(mousePosition.x, mousePosition.y));
-		}, InputCombo::Types::SINGLE);
+		}, Trigger::Types::SINGLE);
 
-		gameState.addInput({k::Numpad3}, [&](float)
+		gameState.addInput({{k::Numpad3}}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {0, -20});
-		}, InputCombo::Types::SINGLE);
+		}, Trigger::Types::SINGLE);
 
-		gameState.addInput({k::Numpad4}, [&](float)
+		gameState.addInput({{k::Numpad4}}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {0, 20});
-		}, InputCombo::Types::SINGLE);
+		}, Trigger::Types::SINGLE);
 
-		gameState.addInput({k::Numpad5}, [&](float)
+		gameState.addInput({{k::Numpad5}}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {-20, 0});
-		}, InputCombo::Types::SINGLE);
+		}, Trigger::Types::SINGLE);
 
-		gameState.addInput({k::Numpad6}, [&](float)
+		gameState.addInput({{k::Numpad6}}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createLift(Vector2i(mousePosition.x, mousePosition.y), {20, 0});
-		}, InputCombo::Types::SINGLE);
+		}, Trigger::Types::SINGLE);
 
-		gameState.addInput({k::Numpad7}, [&](float)
+		gameState.addInput({{k::Numpad7}}, [&](float)
 		{
 			auto mousePosition = camera.getMousePosition() * 100.f;
 			factory->createMetalBox(Vector2i(mousePosition.x, mousePosition.y));
-		}, InputCombo::Types::SINGLE);
+		}, Trigger::Types::SINGLE);
 	}
 
 	void CBGame::initUpdate()
