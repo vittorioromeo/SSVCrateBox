@@ -22,7 +22,7 @@ namespace cb
 			bool canJump{false};
 
 		public:
-			CPlayer(CBGame& mCBGame, CPhysics& mCPhysics);
+			CPlayer(sses::Entity& mEntity, CBGame& mCBGame, CPhysics& mCPhysics);
 
 			void update(float) override;
 	};

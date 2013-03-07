@@ -17,8 +17,8 @@ using namespace cb::Utils;
 
 namespace cb
 {
-	CPlayer::CPlayer(CBGame& mCBGame, CPhysics& mCPhysics)
-		: Component("player"), cbGame(mCBGame), cPhysics(mCPhysics), body(cPhysics.getBody())
+	CPlayer::CPlayer(Entity& mEntity, CBGame& mCBGame, CPhysics& mCPhysics)
+		: Component(mEntity, "player"), cbGame(mCBGame), cPhysics(mCPhysics), body(cPhysics.getBody())
 	{
 		cPhysics.onDetection += [&](Entity& mEntity)
 		{

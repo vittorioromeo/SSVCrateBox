@@ -7,7 +7,7 @@ using namespace ssvs::Utils;
 
 namespace cb
 {
-	CLift::CLift(CBGame& mCBGame, ssvsc::Body& mBody, Vector2f mVelocity) : Component("lift"), cbGame(mCBGame), body(mBody), velocity{mVelocity}
+	CLift::CLift(Entity& mEntity, CBGame& mCBGame, ssvsc::Body& mBody, Vector2f mVelocity) : Component(mEntity, "lift"), cbGame(mCBGame), body(mBody), velocity{mVelocity}
 	{
 		body.onDetection += [&](DetectionInfo mDetectionInfo)
 		{

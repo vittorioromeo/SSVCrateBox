@@ -22,7 +22,7 @@ namespace cb
 			bool flippedX{false}, flippedY{false};
 
 		public:
-			CRender(CBGame& mCBGame, ssvsc::Body& mBody, std::string mTextureId);
+			CRender(sses::Entity& mEntity, CBGame& mCBGame, ssvsc::Body& mBody, std::string mTextureId);
 
 			void update(float) override;
 			void draw() override;

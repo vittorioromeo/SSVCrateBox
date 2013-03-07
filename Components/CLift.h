@@ -17,7 +17,7 @@ namespace cb
 			sf::Vector2f velocity;
 
 		public:
-			CLift(CBGame& mCBGame, ssvsc::Body& mBody, sf::Vector2f mVelocity);
+			CLift(sses::Entity& mEntity, CBGame& mCBGame, ssvsc::Body& mBody, sf::Vector2f mVelocity);
 			void update(float) override;
 	};
 }

@@ -29,10 +29,8 @@ namespace cb
 			ssvs::Utils::Delegate<void, sses::Entity&> onDetection;
 			ssvs::Utils::Delegate<void, sf::Vector2i> onResolution;
 
-			CPhysics(CBGame& mCBGame, ssvsc::World& mWorld, bool mIsStatic, sf::Vector2i mPosition, sf::Vector2i mSize, bool mNoGravity = false);
+			CPhysics(sses::Entity& mEntity, CBGame& mCBGame, ssvsc::World& mWorld, bool mIsStatic, sf::Vector2i mPosition, sf::Vector2i mSize, bool mNoGravity = false);
 			~CPhysics();
-
-			void init() override;
 
 			ssvsc::Body& getBody();
 			bool isNoGravity();

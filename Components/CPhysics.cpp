@@ -14,8 +14,8 @@ using namespace cb::Utils;
 
 namespace cb
 {
-	CPhysics::CPhysics(CBGame& mCBGame, World& mWorld, bool mIsStatic, Vector2i mPosition, Vector2i mSize, bool mNoGravity)
-		: Component("physics"), cbGame(mCBGame), world(mWorld), body(world.create(mPosition, mSize, mIsStatic)), noGravity{mNoGravity}
+	CPhysics::CPhysics(Entity& mEntity, CBGame& mCBGame, World& mWorld, bool mIsStatic, Vector2i mPosition, Vector2i mSize, bool mNoGravity)
+		: Component(mEntity, "physics"), cbGame(mCBGame), world(mWorld), body(world.create(mPosition, mSize, mIsStatic)), noGravity{mNoGravity}
 	{
 		body.onDetection += [&](DetectionInfo mDetectionInfo)
 		{
@@ -47,10 +47,10 @@ namespace cb
 
 			if(body.getWidth() < 200 || body.getHeight() < 200) getEntity().destroy();
 		};
+		
+		body.setUserData(&getEntity());
 	}
 	CPhysics::~CPhysics() { body.destroy(); }
-
-	void CPhysics::init() { body.setUserData(&getEntity()); }
 
 	Body& CPhysics::getBody() { return body; }
 	bool CPhysics::isNoGravity() { return noGravity; }

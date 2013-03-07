@@ -8,12 +8,13 @@
 using namespace std;
 using namespace sf;
 using namespace ssvsc;
+using namespace sses;
 using namespace cb::Utils;
 
 namespace cb
 {
-	CRender::CRender(CBGame& mCBGame, Body& mBody, string mTextureId)
-		: Component("render"), cbGame(mCBGame), body(mBody), sprite{cbGame.getData().getTexture(mTextureId)}
+	CRender::CRender(Entity& mEntity, CBGame& mCBGame, Body& mBody, string mTextureId)
+		: Component(mEntity, "render"), cbGame(mCBGame), body(mBody), sprite{cbGame.getData().getTexture(mTextureId)}
 	{
 		auto& rect(sprite.getTextureRect());
 		sprite.setOrigin({rect.width / 2.f, rect.height / 2.f});
