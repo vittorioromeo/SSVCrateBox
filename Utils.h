@@ -6,6 +6,7 @@
 #define CB_UTILS_H
 
 #include <SFML/Graphics.hpp>
+#include <SSVUtils/SSVUtils.h>
 #include <SSVStart.h>
 
 namespace cb
@@ -16,8 +17,8 @@ namespace cb
 		sf::Vector2f toPixels(sf::Vector2i mCoords);
 		int toCoords(float mPixels);
 
-		void shakeCamera(ssvs::TimelineManager& mTimelineManager, ssvs::Camera& mCamera);
+		void shakeCamera(ssvu::TimelineManager& mTimelineManager, ssvs::Camera& mCamera);
 	}
 }
 
-#endif // CB_UTILS_H
+#endif

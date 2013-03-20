@@ -12,7 +12,7 @@ namespace cb
 		body.onDetection += [&](DetectionInfo mDetectionInfo)
 		{
 			if(mDetectionInfo.userData == nullptr) return;
-			Entity* entity(static_cast<Entity*>(mDetectionInfo.userData));
+			//Entity* entity(static_cast<Entity*>(mDetectionInfo.userData));
 			if(Utils::getMin1DIntersection(body.getShape(), mDetectionInfo.body.getShape()).y > 0)
 				mDetectionInfo.body.setVelocityY(0);
 		};

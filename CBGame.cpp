@@ -14,6 +14,7 @@ using namespace ssvs::Utils;
 using namespace ssvs::Input;
 using namespace sses;
 using namespace sf;
+using namespace ssvu;
 
 namespace cb
 {

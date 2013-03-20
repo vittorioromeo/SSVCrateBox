@@ -11,6 +11,7 @@ using namespace cb;
 using namespace std;
 using namespace ssvs;
 using namespace ssvs::Utils;
+using namespace ssvu;
 
 int main()
 {

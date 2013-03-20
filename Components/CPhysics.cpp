@@ -11,6 +11,7 @@ using namespace std;
 using namespace sf;
 using namespace ssvsc;
 using namespace cb::Utils;
+using namespace ssvu;
 
 namespace cb
 {

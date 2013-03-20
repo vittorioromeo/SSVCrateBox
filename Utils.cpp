@@ -5,8 +5,8 @@
 #include "Utils.h"
 
 using namespace sf;
+using namespace ssvu;
 using namespace ssvs;
-using namespace ssvs::Utils;
 
 namespace cb
 {
@@ -24,7 +24,7 @@ namespace cb
 
 			for(int i{s}; i > 1; --i)
 			{
-				timeline.append<Do>([&mCamera, oldCenter, i]{ mCamera.centerOn(oldCenter + Vector2f{getRnd(-i, i), getRnd(-i, i)}); });
+				timeline.append<Do>([&mCamera, oldCenter, i]{ mCamera.centerOn(oldCenter + Vector2f(getRnd(-i, i), getRnd(-i, i))); });
 				timeline.append<Wait>(2);
 				timeline.append<Go>(0, 5);
 			}

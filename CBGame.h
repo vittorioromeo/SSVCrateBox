@@ -24,7 +24,7 @@ namespace cb
 			ssvs::GameState gameState;
 			ssvs::GameWindow& gameWindow;
 			ssvs::Camera camera{gameWindow, {{160, 120}, {320, 240}}};
-			ssvs::TimelineManager timelineManager;
+			ssvu::TimelineManager timelineManager;
 			sses::Manager manager;
 			int inputX{0}, inputY{0}, inputShoot{0}, inputJump{0};
 
