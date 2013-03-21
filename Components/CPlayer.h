@@ -6,7 +6,7 @@
 #define CPLAYER_H
 
 #include <SFML/Graphics.hpp>
-#include <SSVEntitySystem.h>
+#include <SSVEntitySystem/SSVEntitySystem.h>
 #include <SSVSCollision.h>
 #include "CBGame.h"
 #include "CPhysics.h"
@@ -29,4 +29,4 @@ namespace cb
 }
 
 
-#endif // CPLAYER_H
+#endif

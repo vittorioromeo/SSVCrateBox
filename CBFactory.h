@@ -7,8 +7,8 @@
 
 #include <memory>
 #include <SFML/Graphics.hpp>
-#include <SSVStart.h>
-#include <SSVEntitySystem.h>
+#include <SSVStart/SSVStart.h>
+#include <SSVEntitySystem/SSVEntitySystem.h>
 #include <SSVSCollision.h>
 #include "CBGame.h"
 

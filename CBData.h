@@ -7,7 +7,7 @@
 
 #include <string>
 #include <SFML/Graphics.hpp>
-#include <SSVStart.h>
+#include <SSVStart/SSVStart.h>
 
 namespace cb
 {

@@ -80,25 +80,25 @@
     <Configuration Name="Release" CompilerType="nuwen" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-W;-s;-pedantic;-O3;-Wextra;-std=c++11;-Wall" C_Options="-O2;-Wall" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" UseDifferentPCHFlags="no" PCHFlags="">
         <IncludePath Value="../SSVUtils/include/"/>
-        <IncludePath Value="../SSVEntitySystem"/>
-        <IncludePath Value="../SSVStart"/>
-        <IncludePath Value="../SSVLuaWrapper"/>
+        <IncludePath Value="../SSVEntitySystem/include/"/>
+        <IncludePath Value="../SSVStart/include/"/>
+        <IncludePath Value="../SSVLuaWrapper/include/"/>
         <IncludePath Value="../SSVSCollision"/>
-        <IncludePath Value="D:/Vee/Software/GitHub/OHWorkspace/SFML/include"/>
-        <IncludePath Value="D:/Vee/Software/GitHub/OHWorkspace/jsoncpp/include"/>
+        <IncludePath Value="../SFML/include"/>
+        <IncludePath Value="../jsoncpp/include"/>
         <IncludePath Value="C:/lua/include"/>
         <IncludePath Value="D:/Vee/Software/Repos/sparsehash/build/built/include"/>
       </Compiler>
       <Linker Options="" Required="yes">
         <LibraryPath Value="../SSVUtils/_RELEASE/"/>
         <LibraryPath Value="../SSVStart/_RELEASE/"/>
-        <LibraryPath Value="../SSVEntitySystem/_RELEASE"/>
-        <LibraryPath Value="../SSVLuaWrapper/_RELEASE"/>
-        <LibraryPath Value="../SSVSCollision/_RELEASE"/>
-        <LibraryPath Value="./_RELEASE"/>
-        <LibraryPath Value="D:/Vee/Software/GitHub/OHWorkspace/SFML/build2/lib"/>
-        <LibraryPath Value="D:/Vee/Software/GitHub/OHWorkspace/jsoncpp/libs/mingw"/>
-        <LibraryPath Value="c:/lua"/>
+        <LibraryPath Value="../SSVEntitySystem/_RELEASE/"/>
+        <LibraryPath Value="../SSVLuaWrapper/_RELEASE/"/>
+        <LibraryPath Value="../SSVSCollision/_RELEASE/"/>
+        <LibraryPath Value="./_RELEASE/"/>
+        <LibraryPath Value="../SFML/build2/lib/"/>
+        <LibraryPath Value="../jsoncpp/libs/mingw/"/>
+        <LibraryPath Value="c:/lua/"/>
         <Library Value="SSVUtils"/>
         <Library Value="SSVStart"/>
         <Library Value="SSVEntitySystem"/>

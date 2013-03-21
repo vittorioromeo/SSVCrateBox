@@ -5,8 +5,8 @@
 #ifndef CBGAME_H
 #define CBGAME_H
 
-#include <SSVStart.h>
-#include <SSVEntitySystem.h>
+#include <SSVStart/SSVStart.h>
+#include <SSVEntitySystem/SSVEntitySystem.h>
 #include <SSVSCollision.h>
 #include <SFML/Graphics.hpp>
 #include "CBData.h"

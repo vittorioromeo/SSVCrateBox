@@ -3,7 +3,7 @@
 // AFL License page: http://opensource.org/licenses/AFL-3.0
 
 #include <string>
-#include <SSVStart.h>
+#include <SSVStart/SSVStart.h>
 #include "CBData.h"
 #include "CBGame.h"
 

@@ -7,7 +7,7 @@
 
 #include <string>
 #include <SFML/Graphics.hpp>
-#include <SSVEntitySystem.h>
+#include <SSVEntitySystem/SSVEntitySystem.h>
 #include <SSVSCollision.h>
 #include "CBGame.h"
 
@@ -36,4 +36,4 @@ namespace cb
 	};
 }
 
-#endif // CRENDER_H
+#endif

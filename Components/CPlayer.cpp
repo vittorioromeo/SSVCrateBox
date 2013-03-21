@@ -4,7 +4,7 @@
 
 #include <SFML/Window.hpp>
 #include <SSVSCollision.h>
-#include <SSVEntitySystem.h>
+#include <SSVEntitySystem/SSVEntitySystem.h>
 #include "CPlayer.h"
 #include "CRender.h"
 #include "Utils.h"

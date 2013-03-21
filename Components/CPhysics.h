@@ -7,9 +7,9 @@
 
 #include <memory>
 #include <SFML/Graphics.hpp>
-#include <SSVEntitySystem.h>
+#include <SSVEntitySystem/SSVEntitySystem.h>
 #include <SSVSCollision.h>
-#include <SSVStart.h>
+#include <SSVStart/SSVStart.h>
 #include "CBGame.h"
 
 namespace cb
@@ -37,4 +37,4 @@ namespace cb
 	};
 }
 
-#endif // CPHYSICS_H
+#endif
