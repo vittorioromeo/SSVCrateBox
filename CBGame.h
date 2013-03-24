@@ -7,7 +7,7 @@
 
 #include <SSVStart/SSVStart.h>
 #include <SSVEntitySystem/SSVEntitySystem.h>
-#include <SSVSCollision.h>
+#include <SSVSCollision/SSVSCollision.h>
 #include <SFML/Graphics.hpp>
 #include "CBData.h"
 

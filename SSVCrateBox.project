@@ -83,34 +83,32 @@
         <IncludePath Value="../SSVEntitySystem/include/"/>
         <IncludePath Value="../SSVStart/include/"/>
         <IncludePath Value="../SSVLuaWrapper/include/"/>
-        <IncludePath Value="../SSVSCollision"/>
-        <IncludePath Value="../SFML/include"/>
-        <IncludePath Value="../jsoncpp/include"/>
-        <IncludePath Value="C:/lua/include"/>
-        <IncludePath Value="D:/Vee/Software/Repos/sparsehash/build/built/include"/>
+        <IncludePath Value="../SSVSCollision/include/"/>
+        <IncludePath Value="../SFML/include/"/>
+        <IncludePath Value="../jsoncpp/include/"/>
+        <IncludePath Value="../lua/include/"/>
+        <IncludePath Value="D:/Vee/Software/Repos/sparsehash/build/built/include/"/>
       </Compiler>
       <Linker Options="" Required="yes">
-        <LibraryPath Value="../SSVUtils/_RELEASE/"/>
-        <LibraryPath Value="../SSVStart/_RELEASE/"/>
-        <LibraryPath Value="../SSVEntitySystem/_RELEASE/"/>
-        <LibraryPath Value="../SSVLuaWrapper/_RELEASE/"/>
-        <LibraryPath Value="../SSVSCollision/_RELEASE/"/>
-        <LibraryPath Value="./_RELEASE/"/>
+        <LibraryPath Value="../SSVUtils/lib/"/>
+        <LibraryPath Value="../SSVStart/lib/"/>
+        <LibraryPath Value="../SSVEntitySystem/lib/"/>
+        <LibraryPath Value="../SSVLuaWrapper/lib/"/>
+        <LibraryPath Value="../SSVSCollision/lib/"/>
         <LibraryPath Value="../SFML/build2/lib/"/>
         <LibraryPath Value="../jsoncpp/libs/mingw/"/>
-        <LibraryPath Value="c:/lua/"/>
-        <Library Value="SSVUtils"/>
-        <Library Value="SSVStart"/>
-        <Library Value="SSVEntitySystem"/>
-        <Library Value="SSVLuaWrapper"/>
+        <LibraryPath Value="../lua/"/>
+        <Library Value="SSVUtils-s"/>
+        <Library Value="SSVStart-s"/>
+        <Library Value="SSVEntitySystem-s"/>
+        <Library Value="SSVLuaWrapper-s"/>
         <Library Value="sfml-window"/>
         <Library Value="sfml-graphics"/>
         <Library Value="sfml-system"/>
         <Library Value="sfml-audio"/>
         <Library Value="json_mingw_libmt"/>
         <Library Value="lua5.1"/>
-        <Library Value="lua51"/>
-        <Library Value="SSVSCollision"/>
+        <Library Value="SSVSCollision-s"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
       <General OutputFile="./_RELEASE/$(ProjectName).exe" IntermediateDirectory="./_INTERMEDIATE" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="./_RELEASE/" PauseExecWhenProcTerminates="yes"/>

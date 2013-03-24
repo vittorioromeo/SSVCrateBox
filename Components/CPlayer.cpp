@@ -3,7 +3,7 @@
 // AFL License page: http://opensource.org/licenses/AFL-3.0
 
 #include <SFML/Window.hpp>
-#include <SSVSCollision.h>
+#include <SSVSCollision/SSVSCollision.h>
 #include <SSVEntitySystem/SSVEntitySystem.h>
 #include "CPlayer.h"
 #include "CRender.h"
