@@ -32,4 +32,4 @@ namespace cb
 	};
 }
 
-#endif // CBFACTORY_H
+#endif
